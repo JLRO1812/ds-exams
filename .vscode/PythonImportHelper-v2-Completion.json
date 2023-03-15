@@ -1,0 +1,131 @@
+[
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Redis",
+        "importPath": "redis",
+        "description": "redis",
+        "isExtraImport": true,
+        "detail": "redis",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "webapp",
+        "description": "webapp",
+        "isExtraImport": true,
+        "detail": "webapp",
+        "documentation": {}
+    },
+    {
+        "label": "hello",
+        "kind": 2,
+        "importPath": "2022-1.midterm3.source.app",
+        "description": "2022-1.midterm3.source.app",
+        "peekOfCode": "def hello():\n    count = redis.incr('hits')\n    return 'Hello World! I have been seen {} times.\\n'.format(count)\n@app.route('/liveness')\ndef liveness():\n    return 'Everything works as we expected'\n@app.route('/readiness')\ndef readiness():\n    return 'Everything works as we expected'\nif __name__ == \"__main__\":",
+        "detail": "2022-1.midterm3.source.app",
+        "documentation": {}
+    },
+    {
+        "label": "liveness",
+        "kind": 2,
+        "importPath": "2022-1.midterm3.source.app",
+        "description": "2022-1.midterm3.source.app",
+        "peekOfCode": "def liveness():\n    return 'Everything works as we expected'\n@app.route('/readiness')\ndef readiness():\n    return 'Everything works as we expected'\nif __name__ == \"__main__\":\n    app.run(host=\"0.0.0.0\", debug=True)",
+        "detail": "2022-1.midterm3.source.app",
+        "documentation": {}
+    },
+    {
+        "label": "readiness",
+        "kind": 2,
+        "importPath": "2022-1.midterm3.source.app",
+        "description": "2022-1.midterm3.source.app",
+        "peekOfCode": "def readiness():\n    return 'Everything works as we expected'\nif __name__ == \"__main__\":\n    app.run(host=\"0.0.0.0\", debug=True)",
+        "detail": "2022-1.midterm3.source.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "2022-1.midterm3.source.app",
+        "description": "2022-1.midterm3.source.app",
+        "peekOfCode": "app = Flask(__name__)\nredis = Redis(host=os.environ['REDIS_HOST'], port=6379)\n@app.route('/')\ndef hello():\n    count = redis.incr('hits')\n    return 'Hello World! I have been seen {} times.\\n'.format(count)\n@app.route('/liveness')\ndef liveness():\n    return 'Everything works as we expected'\n@app.route('/readiness')",
+        "detail": "2022-1.midterm3.source.app",
+        "documentation": {}
+    },
+    {
+        "label": "redis",
+        "kind": 5,
+        "importPath": "2022-1.midterm3.source.app",
+        "description": "2022-1.midterm3.source.app",
+        "peekOfCode": "redis = Redis(host=os.environ['REDIS_HOST'], port=6379)\n@app.route('/')\ndef hello():\n    count = redis.incr('hits')\n    return 'Hello World! I have been seen {} times.\\n'.format(count)\n@app.route('/liveness')\ndef liveness():\n    return 'Everything works as we expected'\n@app.route('/readiness')\ndef readiness():",
+        "detail": "2022-1.midterm3.source.app",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "2023-1.playbooks.python.templates.webapp",
+        "description": "2023-1.playbooks.python.templates.webapp",
+        "peekOfCode": "def home():\n    return render_template('index.html')\n@app.route('/upload', methods=['POST'])\ndef upload():\n    username = request.form['username']\n    file1 = request.files['file1']\n    file2 = request.files['file2']\n    os.mkdir(username)\n    file1.save(f'{username}/{file1.filename}')\n    file2.save(f'{username}/{file2.filename}')",
+        "detail": "2023-1.playbooks.python.templates.webapp",
+        "documentation": {}
+    },
+    {
+        "label": "upload",
+        "kind": 2,
+        "importPath": "2023-1.playbooks.python.templates.webapp",
+        "description": "2023-1.playbooks.python.templates.webapp",
+        "peekOfCode": "def upload():\n    username = request.form['username']\n    file1 = request.files['file1']\n    file2 = request.files['file2']\n    os.mkdir(username)\n    file1.save(f'{username}/{file1.filename}')\n    file2.save(f'{username}/{file2.filename}')\n    return \"Files uploaded successfully\"\nif __name__ == '__main__':\n    app.run(host=\"0.0.0.0\", debug=True)",
+        "detail": "2023-1.playbooks.python.templates.webapp",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "2023-1.playbooks.python.templates.webapp",
+        "description": "2023-1.playbooks.python.templates.webapp",
+        "peekOfCode": "app = Flask(__name__, template_folder='templates')\n@app.route('/')\ndef home():\n    return render_template('index.html')\n@app.route('/upload', methods=['POST'])\ndef upload():\n    username = request.form['username']\n    file1 = request.files['file1']\n    file2 = request.files['file2']\n    os.mkdir(username)",
+        "detail": "2023-1.playbooks.python.templates.webapp",
+        "documentation": {}
+    }
+]

@@ -1,7 +1,9 @@
+#!/usr/bin/python3
+
 from flask import Flask, request, render_template
 import os
 
-app = Flask(__name__, template_folder='template')
+app = Flask(__name__, template_folder='templates')
 
 @app.route('/')
 def home():
@@ -22,4 +24,4 @@ def upload():
     return "Files uploaded successfully"
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", debug=True)

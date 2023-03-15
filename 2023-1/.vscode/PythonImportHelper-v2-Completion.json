@@ -1,0 +1,62 @@
+[
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "webapp.template.webapp",
+        "description": "webapp.template.webapp",
+        "peekOfCode": "def home():\n    return render_template('index.html')\n@app.route('/upload', methods=['POST'])\ndef upload():\n    username = request.form['username']\n    file1 = request.files['file1']\n    file2 = request.files['file2']\n    os.mkdir(username)\n    file1.save(f'{username}/{file1.filename}')\n    file2.save(f'{username}/{file2.filename}')",
+        "detail": "webapp.template.webapp",
+        "documentation": {}
+    },
+    {
+        "label": "upload",
+        "kind": 2,
+        "importPath": "webapp.template.webapp",
+        "description": "webapp.template.webapp",
+        "peekOfCode": "def upload():\n    username = request.form['username']\n    file1 = request.files['file1']\n    file2 = request.files['file2']\n    os.mkdir(username)\n    file1.save(f'{username}/{file1.filename}')\n    file2.save(f'{username}/{file2.filename}')\n    return \"Files uploaded successfully\"\nif __name__ == '__main__':\n    app.run(debug=True)",
+        "detail": "webapp.template.webapp",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "webapp.template.webapp",
+        "description": "webapp.template.webapp",
+        "peekOfCode": "app = Flask(__name__, template_folder='template')\n@app.route('/')\ndef home():\n    return render_template('index.html')\n@app.route('/upload', methods=['POST'])\ndef upload():\n    username = request.form['username']\n    file1 = request.files['file1']\n    file2 = request.files['file2']\n    os.mkdir(username)",
+        "detail": "webapp.template.webapp",
+        "documentation": {}
+    }
+]
